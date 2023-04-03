@@ -23,7 +23,7 @@ jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
 // using the following online tool:
 // https://lastpass.com/generatepassword.php
 
-jwtOptions.secretOrKey = env.JWT_SECRET
+jwtOptions.secretOrKey =  process.env.JWT_SECRET
 
 let strategy = new JwtStrategy(jwtOptions, function (jwt_payload, next) {
   console.log('payload received', jwt_payload);
